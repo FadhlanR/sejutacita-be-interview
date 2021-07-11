@@ -1,9 +1,6 @@
 import { logger } from 'express-glass';
 import jwt from 'jsonwebtoken';
-import adminClient from '../client/admin_client';
-import userClient from '../client/user_client';
 import env from '../config/env';
-import InternalServerError from '../error/internal_server_error';
 import ParamIllegal from '../error/param_illegal';
 import Unauthorized from '../error/unauthorized';
 import { assertNotNull, assertTrue } from '../util/assert_util';
