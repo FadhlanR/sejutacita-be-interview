@@ -49,6 +49,14 @@ const id = Joi.string()
         "any.required": `id is required`
     });
 
+const refresh_token = Joi.string()
+    .required()
+    .messages({
+        "string.base": `refresh_token must be a string`,
+        "string.empty": `refresh_token cannot be an empty`,
+        "any.required": `refresh_token is required`
+    });
+
 userValidator.add = Joi.object().keys({
     username,
     fullname,
@@ -61,6 +69,15 @@ userValidator.update = Joi.object().keys({
     fullname,
     password: password.allow(null),
     role
+});
+
+userValidator.login = Joi.object().keys({
+    username,
+    password
+});
+
+userValidator.generateAccessToken = Joi.object().keys({
+    refresh_token
 });
 
 export default userValidator;

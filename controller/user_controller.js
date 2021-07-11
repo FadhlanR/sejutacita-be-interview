@@ -68,4 +68,32 @@ userController.query = async (req, res, next) => {
     }
 }
 
+userController.login = async (req, res, next) => {
+    try {
+        logger().info(`Login user request`);
+        const validationResult = userValidator.login.validate(req.body);
+        if (validationResult.error) {
+            throw new ParamIllegal(validationResult.error.message);
+        }
+        responseUtil.success(res, await userService.login(validationResult.value));
+    } catch(e) {
+        logger().error(`Login user failed, error = ${e}`);
+        responseUtil.fail(res, e);
+    }
+}
+
+userController.generateAccessToken = async (req, res, next) => {
+    try {
+        logger().info(`Generate access token request`);
+        const validationResult = userValidator.generateAccessToken.validate(req.body);
+        if (validationResult.error) {
+            throw new ParamIllegal(validationResult.error.message);
+        }
+        responseUtil.success(res, await userService.generateAccessToken(validationResult.value));
+    } catch(e) {
+        logger().error(`Generate access token failed, error = ${e}`);
+        responseUtil.fail(res, e);
+    }
+}
+
 export default userController;
