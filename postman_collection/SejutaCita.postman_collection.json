@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "707a874c-b1f9-44ff-b790-403388939bf3",
+		"name": "SejutaCita",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWIyMThlOWJjZTIxOGE2NDJkZWY3MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyNjAyMjI4OSwiZXhwIjoxNjI2MTA4Njg5fQ.9DAjF4pNLgZnHw1zbgwPkVWSLAN6uIn81_1sek0Oijo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"fullname\": \"Admin\",\r\n    \"password\": \"AdminUtama123@B\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"AdminUtama123@B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWIyMThlOWJjZTIxOGE2NDJkZWY3MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyNjAyMjI4OSwiZXhwIjoxNjMxMjA2Mjg5fQ.GBI754_wU11pMV5CgEbWvFFPGf0iE79wThRIqYepmZc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/generate_access_token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"generate_access_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWIyMThlOWJjZTIxOGE2NDJkZWY3MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyNjAyMzY5MiwiZXhwIjoxNjI2MTEwMDkyfQ.GgPtJQVXUfr2btJU47pJWsB1tNdlGe-Qwurclk_sJDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60eb1aae9699ff9e90e0239b\",\r\n    \"fullname\": \"Jon Doe\",\r\n    \"password\": \"JonDoe123@B\",\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWIyMThlOWJjZTIxOGE2NDJkZWY3MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyNjAyMzY5MiwiZXhwIjoxNjI2MTEwMDkyfQ.GgPtJQVXUfr2btJU47pJWsB1tNdlGe-Qwurclk_sJDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60eb1aae9699ff9e90e0239b\",\r\n    \"fullname\": \"Jon Doe\",\r\n    \"password\": \"JonDoe123@B\",\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users?id=60eb264536d9512bb4b3adab",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60eb264536d9512bb4b3adab"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWIyMThlOWJjZTIxOGE2NDJkZWY3MCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyNjAyMzY5MiwiZXhwIjoxNjI2MTEwMDkyfQ.GgPtJQVXUfr2btJU47pJWsB1tNdlGe-Qwurclk_sJDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60eb1aae9699ff9e90e0239b\",\r\n    \"fullname\": \"Jon Doe\",\r\n    \"password\": \"JonDoe123@B\",\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users?offset=0&limit=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
