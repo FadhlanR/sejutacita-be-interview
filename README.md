@@ -51,6 +51,16 @@ kubectl apply -f .\kube\app-dply.yaml
 kubectl apply -f .\kube\app-srvc.yaml
 ```
 
+If your the process success you can run this command
+
+```bash
+kubectl get pods --watch
+```
+ 
+And will get the result as the image below
+![alt text](./kube/expected_pods)
+
+
 ## Usage
 
 - Import postman collection and postman environtment from folder postman_collection.
