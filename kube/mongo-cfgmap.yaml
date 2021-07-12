@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-initdb
+data:
+  createuser.sh: |
+    mongo -u root -p sejutacita_be_interview_mongodb <<EOF
+      use sejutacita_be_interview
+      db.users.insert(
+        {
+          userName: "admin",
+          fullName: "Admin Utama",
+          password: "f6b36065b409d1a50dd6f0fc4a2c1fbc843aac7e",
+          role: "ADMIN"
+        }
+      )
+    EOF

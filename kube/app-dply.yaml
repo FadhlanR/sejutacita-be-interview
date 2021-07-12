@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sejutacita-be-interview
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sejutacita-be-interview
+  template:
+    metadata:
+      labels:
+        app: sejutacita-be-interview
+    spec:
+      containers:
+        - name: app
+          image: fadhlanrwn/sejutacita-be-interview:1.0.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: HOST
+              value: localhost
+            - name: PORT
+              value: "3000"
+            - name: DB_HOST
+              value: mongo
+            - name: DB_PORT
+              value: "27017"
+            - name: DB_NAME
+              value: sejutacita_be_interview
+            - name: DB_USERNAME
+              value: root
+            - name: DB_PASSWORD
+              value: sejutacita_be_interview_mongodb
+            - name: ACCESS_TOKEN_SECRET
+              value: sejutacita_be_interview_access_token
+            - name: REFRESH_TOKEN_SECRET
+              value: sejutacita_be_interview_refresh_token
+          imagePullPolicy: Always
