@@ -58,7 +58,7 @@ kubectl get pods --watch
 ```
  
 And will get the result as the image below
-![alt text](./kube/expected_pods)
+![alt text](./kube/expected_pods.png)
 
 
 ## Usage
