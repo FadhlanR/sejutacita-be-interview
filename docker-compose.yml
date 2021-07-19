@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ibf-frontend-interview:
+    container_name: ibf-frontend-interview
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    volumes:
+      - /home/ubuntu/file_directory/images:/file_directory/images
